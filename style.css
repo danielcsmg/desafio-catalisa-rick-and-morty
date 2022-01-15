@@ -34,6 +34,10 @@ main > div section img {
     width: 300px;
 }
 
+section {
+    margin-left: 12px;
+}
+
 #botao {
     background-color: #a9d4e7;
     border-radius: 3px;
