@@ -15,7 +15,15 @@ body {
 #personagens {
     align-items: center;
     display: flex;
-    height: 80vh;
+    height: 75vh;
+    justify-content: center;
+    position: relative;
+}
+
+#div-botao {
+    align-items: center;
+    display: flex;
+    height: 5vh;
     justify-content: center;
     position: relative;
 }
@@ -24,4 +32,17 @@ main > div section img {
     height: 300px;
     margin: 15px 0;
     width: 300px;
+}
+
+#botao {
+    background-color: #a9d4e7;
+    border-radius: 3px;
+    color: blue;
+    font-family: Verdana;
+    font-size: medium;
+    font-weight: 500;
+    letter-spacing: -0.4px;
+    line-height: 20px;
+    padding: 5px 15px;
+    text-transform: uppercase;
 }
