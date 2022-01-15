@@ -17,9 +17,13 @@ const condicaoPersonagemTres = document.querySelector('#condicaoPersonagemTres')
 const botao = document.querySelector('button');
 
 traduzirCondicao = (data) => {
-    const teste = data
-    console.log(teste)
-    return teste
+    if (data.status == 'unknown') {
+        return 'Não se sabe.'
+    }else if(data.status == 'Alive'){
+        return 'Sim.'
+    }else{
+        return 'Não. Está morto.'
+    }
 }
 
 pegarPersonagens = () => {
@@ -46,11 +50,10 @@ pegarPersonagens = () => {
         especiePersonagemDois.innerHTML = data[1].species;
         especiePersonagemTres.innerHTML = data[2].species;
 
-        condicaoPersonagemUm.innerHTML = data[0].status;
-        condicaoPersonagemDois.innerHTML = data[1].status;
-        condicaoPersonagemTres.innerHTML = data[2].status;
+        condicaoPersonagemUm.innerHTML = traduzirCondicao(data[0]);
+        condicaoPersonagemDois.innerHTML = traduzirCondicao(data[1]);
+        condicaoPersonagemTres.innerHTML = traduzirCondicao(data[2]);
     });
 }
 
-traduzirCondicao();
 botao.onclick = pegarPersonagens
