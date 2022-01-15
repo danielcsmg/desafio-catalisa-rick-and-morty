@@ -12,15 +12,15 @@ body {
     width: 100%;
 }
 
-main {
+#personagens {
     align-items: center;
     display: flex;
-    height: 100vh;
+    height: 80vh;
     justify-content: center;
     position: relative;
 }
 
-main > section img {
+main > div section img {
     height: 300px;
     margin: 15px 0;
     width: 300px;
