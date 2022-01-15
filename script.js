@@ -16,35 +16,41 @@ const condicaoPersonagemTres = document.querySelector('#condicaoPersonagemTres')
 
 const botao = document.querySelector('button');
 
+traduzirCondicao = (data) => {
+    const teste = data
+    console.log(teste)
+    return teste
+}
+
 pegarPersonagens = () => {
-    return fetch(`https://rickandmortyapi.com/api/character/67,3,2`, {
+    return fetch(`https://rickandmortyapi.com/api/character/7,5,2`, {
         method: 'GET',
         headers: {
             Accept: 'application/json',
             "Content-type": 'application/json'
         }
     }).then((response) => response.json()).then((data) => {
-        const dadosDosPersonagens = data;
-        imagemPersonagemUm.src = dadosDosPersonagens[0].image;
-        imagemPersonagemDois.src = dadosDosPersonagens[1].image;
-        imagemPersonagemTres.src = dadosDosPersonagens[2].image;
+        imagemPersonagemUm.src = data[0].image;
+        imagemPersonagemDois.src = data[1].image;
+        imagemPersonagemTres.src = data[2].image;
 
-        imagemPersonagemUm.alt = dadosDosPersonagens[0].name;
-        imagemPersonagemDois.alt = dadosDosPersonagens[1].name;
-        imagemPersonagemTres.alt = dadosDosPersonagens[2].name;
+        imagemPersonagemUm.alt = data[0].name;
+        imagemPersonagemDois.alt = data[1].name;
+        imagemPersonagemTres.alt = data[2].name;
 
-        nomePersonagemUm.innerHTML = dadosDosPersonagens[0].name;
-        nomePersonagemDois.innerHTML = dadosDosPersonagens[1].name;
-        nomePersonagemTres.innerHTML = dadosDosPersonagens[2].name;
+        nomePersonagemUm.innerHTML = data[0].name;
+        nomePersonagemDois.innerHTML = data[1].name;
+        nomePersonagemTres.innerHTML = data[2].name;
         
-        especiePersonagemUm.innerHTML = dadosDosPersonagens[0].species;
-        especiePersonagemDois.innerHTML = dadosDosPersonagens[1].species;
-        especiePersonagemTres.innerHTML = dadosDosPersonagens[2].species;
+        especiePersonagemUm.innerHTML = data[0].species;
+        especiePersonagemDois.innerHTML = data[1].species;
+        especiePersonagemTres.innerHTML = data[2].species;
 
-        condicaoPersonagemUm.innerHTML = dadosDosPersonagens[0].status;
-        condicaoPersonagemDois.innerHTML = dadosDosPersonagens[1].status;
-        condicaoPersonagemTres.innerHTML = dadosDosPersonagens[2].status;
+        condicaoPersonagemUm.innerHTML = data[0].status;
+        condicaoPersonagemDois.innerHTML = data[1].status;
+        condicaoPersonagemTres.innerHTML = data[2].status;
     });
 }
 
+traduzirCondicao();
 botao.onclick = pegarPersonagens
