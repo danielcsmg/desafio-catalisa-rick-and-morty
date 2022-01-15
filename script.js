@@ -26,8 +26,16 @@ traduzirCondicao = (data) => {
     }
 }
 
+gerarValoresAleatorios = () => {
+    const totalDePersonagens = 825
+    const primeiroId = Math.floor(Math.random() * (totalDePersonagens - 1)) + 1;
+    const segundoId = Math.floor(Math.random() * (totalDePersonagens - 1)) + 1;
+    const terceiroId = Math.floor(Math.random() * (totalDePersonagens - 1)) + 1;
+    return `${primeiroId},${segundoId},${terceiroId}`;
+}
+
 pegarPersonagens = () => {
-    return fetch(`https://rickandmortyapi.com/api/character/7,5,2`, {
+    return fetch(`https://rickandmortyapi.com/api/character/${gerarValoresAleatorios()}`, {
         method: 'GET',
         headers: {
             Accept: 'application/json',
@@ -57,3 +65,4 @@ pegarPersonagens = () => {
 }
 
 botao.onclick = pegarPersonagens
+gerarValoresAleatorios();
