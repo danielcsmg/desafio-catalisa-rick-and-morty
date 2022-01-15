@@ -28,6 +28,7 @@ traduzirCondicao = (data) => {
 
 gerarValoresAleatorios = () => {
     const totalDePersonagens = 825
+    //A equação abaixo retira o número 0, pois isso pode gerar um erro ao buscar as informações
     const primeiroId = Math.floor(Math.random() * (totalDePersonagens - 1)) + 1;
     const segundoId = Math.floor(Math.random() * (totalDePersonagens - 1)) + 1;
     const terceiroId = Math.floor(Math.random() * (totalDePersonagens - 1)) + 1;
@@ -65,4 +66,3 @@ pegarPersonagens = () => {
 }
 
 botao.onclick = pegarPersonagens
-gerarValoresAleatorios();
